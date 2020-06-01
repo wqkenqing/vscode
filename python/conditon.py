@@ -7,3 +7,5 @@ while(t in range(3)):
     print(t)
     t=t+1
 
+
+}
