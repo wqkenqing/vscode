@@ -1,0 +1,13 @@
+(dp0
+S'age'
+p1
+I12
+sS'name'
+p2
+S'ken'
+p3
+sS'sex'
+p4
+S'boy'
+p5
+s.
