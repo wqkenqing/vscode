@@ -1,16 +1,16 @@
-# -*- coding:utf8 -*-
+# -*- coding: utf-8 -*-
 
 
 list1=["1",2,"three"]
 print(list1[0:2])
 
 print("最大值是:")
-print(max(list1))
+# print(max(list1))
 
 
 ## 最小值
 print("最小值是:")
-print(min(list1))
+# print(min(list1))
 
 ## 修改
 print(list1)
