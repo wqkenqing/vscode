@@ -7,7 +7,6 @@ import time
 
 # pool = redis.ConnectionPool(host='jd_cloud', port=6379, decode_responses=True)
 
-pool =redis.ConnectionPool(host='jd_cloud', port=6380, db=0, password='test123')
 
 # print(dir(redis.Redis))
 # r = StrictRedis(connection_pool=pool)
