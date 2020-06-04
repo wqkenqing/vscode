@@ -1,6 +1,5 @@
-#!python
-#--*-- encoding:utf8 --*--
-
+#!python3
+# -*- coding: UTF-8 -*-
 import redis
 import time
 

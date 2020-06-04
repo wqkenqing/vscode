@@ -1,7 +1,9 @@
-#--*-- encoding:utf8 --*--
+#!python3
+# -*- coding: UTF-8 -*-
 import logging
 
 try:
+    logging.info("starting....")
     print('try...')
     r = 10 / 0
     print('result:', r)

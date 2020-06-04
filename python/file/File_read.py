@@ -1,4 +1,5 @@
-#--*-- encoding:utf8 --*--
+#!python3
+# -*- coding: UTF-8 -*-
 import logging
 ## file open 
 # try:

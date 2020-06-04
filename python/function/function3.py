@@ -1,5 +1,5 @@
-# --*-- encoding:utf8 --*--
-
+#!python3
+# -*- coding: UTF-8 -*-
 ## 值传递 ,索引传递
 
 ## 值传递

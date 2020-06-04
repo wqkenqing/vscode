@@ -1,4 +1,5 @@
-# --*-- encoding:utf8 --*--
+#!python3
+# -*- coding: UTF-8 -*-
 class Test():
     age=1
     name="kuiq"

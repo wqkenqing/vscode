@@ -1,6 +1,5 @@
-#!/usr/local/opt/python3/bin/python3
-#--*-- encoding:utf8 --*--
-
+#!python3
+# -*- coding: UTF-8 -*-
 from collections import ChainMap
 import os, argparse
 

@@ -1,8 +1,9 @@
 #!python3
-#--*-- encoding:utf8 --*--
-# import kafka
+# -*- coding: UTF-8 -*-
+import kafka
+
 from kafka import KafkaConsumer
-consumer=KafkaConsumer('test_topic5',group_id='consumer001',auto_offset_reset='earliest'
+consumer=KafkaConsumer('test_topic5',group_id='consumer002',auto_offset_reset='earliest'
 ,bootstrap_servers=['jd_cloud:32770'])
 print("start")
 for msg in consumer:  

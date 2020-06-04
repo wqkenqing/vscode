@@ -1,5 +1,5 @@
-#!/usr/local/opt/python3/bin/python3
-#--*-- encoding:utf8 --*--
+#!python3
+# -*- coding: UTF-8 -*-
 class Fib(object):
     def __init__(self):
         self.a, self.b = 0, 1 # 初始化两个计数器a，b

@@ -1,5 +1,5 @@
-#!/usr/local/opt/python3/bin/python3
-#--*-- encoding:utf8 --*--
+#!python3
+# -*- coding: UTF-8 -*-j
 from datetime import datetime
 
 ## datetime created

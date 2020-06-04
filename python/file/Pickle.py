@@ -1,4 +1,5 @@
-#--*-- encoding:utf8 --*--
+#!python3
+# -*- coding: UTF-8 -*-j
 import pickle
 # import os
 d=dict(name='ken',age=12,sex='boy')

@@ -1,4 +1,5 @@
-# --*-- encoding:utf8 --*--
+#!python3
+# -*- coding: UTF-8 -*-
 class Student(object):
     name
     ## 构造方法

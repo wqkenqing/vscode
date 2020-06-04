@@ -1,4 +1,6 @@
-# -*- coding: utf-8 -*-
+#!python3
+# -*- coding=utf8 -*-
+
 print("中国")
 
 
