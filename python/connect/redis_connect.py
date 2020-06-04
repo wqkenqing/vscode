@@ -4,7 +4,6 @@ import redis
 import time
 
 
-
 # pool = redis.ConnectionPool(host='jd_cloud', port=6379, decode_responses=True)
 
 

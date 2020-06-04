@@ -13,5 +13,6 @@ class Fib(object):
             raise StopIteration()
         return self.a # 返回下一个值
 
+
 for n in Fib():
     print(n)
