@@ -1,9 +1,50 @@
 {
-    "count": 778,
+    "took": 7,
+    "timed_out": false,
     "_shards": {
         "total": 5,
         "successful": 5,
         "skipped": 0,
         "failed": 0
+    },
+    "hits": {
+        "total": 600,
+        "max_score": 1,
+        "hits": [
+            {
+                "_index": "tourist_minute_local_data",
+                "_type": "doc",
+                "_id": "2830030_0_201912201620_minute",
+                "_score": 1,
+                "_source": {
+                    "scenicName": "柳江古镇",
+                    "flag": "minute",
+                    "scenicId": "2830030",
+                    "datasource": "眉山移动",
+                    "name": "trhee",
+                    "id": "2830030_0_201912201620_minute",
+                    "memberType": 0,
+                    "time": "2019-12-20 16:20:00",
+                    "peopleNum": 8722
+                }
+            },
+            {
+                "_index": "tourist_minute_local_data",
+                "_type": "doc",
+                "_id": "2830030_0_201912201710_minute",
+                "_score": 1,
+                "_source": {
+                    "scenicName": "柳江古镇",
+                    "flag": "minute",
+                    "scenicId": "2830030",
+                    "datasource": "眉山移动",
+                    "name": "trhee",
+                    "id": "2830030_0_201912201710_minute",
+                    "memberType": 0,
+                    "time": "2019-12-20 17:10:00",
+                    "peopleNum": 8964
+                }
+            }
+        ]
     }
 }
