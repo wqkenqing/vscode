@@ -41,7 +41,7 @@ class esTest(object):
     def search(self, es, index, body):
         response = es.search(
             index=index,
-            body=body
+            body=json.dumps(body)
         )
         return response
 
@@ -50,7 +50,7 @@ if __name__ == '__main__':
     test = esTest()
     # 获取es实例对象
     es = test.es_connect()
-    # 输出es健康状态
+    # 输出es健康态
     # test.ouput(es.cluster.health())
     ## 输出索引数
     # print(es.cat.indices())
@@ -65,10 +65,8 @@ if __name__ == '__main__':
     # test.getIndexStore(es.cat.indices())
 
     index = 'tourist_minute_local_data'
-    body = '''{"from": 0,"size": 2}'''
+    body = {"from": 0,"size": 2}
     response = test.search(es, index, body)
     for resp in response['hits']['hits']:
-        for k, v in resp:
-            logging.info("==========this is the resp result ==========")
+        for k, v in resp.items():
             print("the key is {},the val is {}".format(k, v))
-            logging.info("============================================")

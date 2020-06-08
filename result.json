@@ -1,50 +1,62 @@
-{
-    "took": 7,
-    "timed_out": false,
-    "_shards": {
-        "total": 5,
-        "successful": 5,
-        "skipped": 0,
-        "failed": 0
+[
+    {
+        "health": "green",
+        "status": "open",
+        "index": ".kibana_task_manager",
+        "uuid": "0CnAJwy0Sf2HdCoo5pIeuA",
+        "pri": "1",
+        "rep": "0",
+        "docs.count": "2",
+        "docs.deleted": "0",
+        "store.size": "12.6kb",
+        "pri.store.size": "12.6kb"
     },
-    "hits": {
-        "total": 600,
-        "max_score": 1,
-        "hits": [
-            {
-                "_index": "tourist_minute_local_data",
-                "_type": "doc",
-                "_id": "2830030_0_201912201620_minute",
-                "_score": 1,
-                "_source": {
-                    "scenicName": "柳江古镇",
-                    "flag": "minute",
-                    "scenicId": "2830030",
-                    "datasource": "眉山移动",
-                    "name": "trhee",
-                    "id": "2830030_0_201912201620_minute",
-                    "memberType": 0,
-                    "time": "2019-12-20 16:20:00",
-                    "peopleNum": 8722
-                }
-            },
-            {
-                "_index": "tourist_minute_local_data",
-                "_type": "doc",
-                "_id": "2830030_0_201912201710_minute",
-                "_score": 1,
-                "_source": {
-                    "scenicName": "柳江古镇",
-                    "flag": "minute",
-                    "scenicId": "2830030",
-                    "datasource": "眉山移动",
-                    "name": "trhee",
-                    "id": "2830030_0_201912201710_minute",
-                    "memberType": 0,
-                    "time": "2019-12-20 17:10:00",
-                    "peopleNum": 8964
-                }
-            }
-        ]
+    {
+        "health": "yellow",
+        "status": "open",
+        "index": "testindex",
+        "uuid": "7KyD6diQTGGZknWTX3Iw0A",
+        "pri": "5",
+        "rep": "1",
+        "docs.count": "1",
+        "docs.deleted": "0",
+        "store.size": "4.7kb",
+        "pri.store.size": "4.7kb"
+    },
+    {
+        "health": "yellow",
+        "status": "open",
+        "index": "people",
+        "uuid": "Mm96TGZoSxevX6Gjm0bVXw",
+        "pri": "3",
+        "rep": "1",
+        "docs.count": "0",
+        "docs.deleted": "0",
+        "store.size": "783b",
+        "pri.store.size": "783b"
+    },
+    {
+        "health": "green",
+        "status": "open",
+        "index": ".kibana_1",
+        "uuid": "o901Yj-DQx-15_vL7xYwhA",
+        "pri": "1",
+        "rep": "0",
+        "docs.count": "4",
+        "docs.deleted": "1",
+        "store.size": "19.8kb",
+        "pri.store.size": "19.8kb"
+    },
+    {
+        "health": "yellow",
+        "status": "open",
+        "index": "tourist_minute_local_data",
+        "uuid": "fJ012ZFAQEiHytMAq11I8A",
+        "pri": "5",
+        "rep": "1",
+        "docs.count": "600",
+        "docs.deleted": "252",
+        "store.size": "147.7kb",
+        "pri.store.size": "147.7kb"
     }
-}
+]
