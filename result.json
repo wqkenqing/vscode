@@ -1,5 +1,17 @@
 [
     {
+        "health": "yellow",
+        "status": "open",
+        "index": "hotel_tourist_source_v6",
+        "uuid": "qFmJJq1kRty3mMRbcDYezw",
+        "pri": "5",
+        "rep": "1",
+        "docs.count": "0",
+        "docs.deleted": "0",
+        "store.size": "1.2kb",
+        "pri.store.size": "1.2kb"
+    },
+    {
         "health": "green",
         "status": "open",
         "index": ".kibana_task_manager",
@@ -10,6 +22,78 @@
         "docs.deleted": "0",
         "store.size": "12.6kb",
         "pri.store.size": "12.6kb"
+    },
+    {
+        "health": "yellow",
+        "status": "open",
+        "index": "hotel_tourist_source",
+        "uuid": "KEujjubHQguiNWkKcNLmsQ",
+        "pri": "5",
+        "rep": "2",
+        "docs.count": "28800",
+        "docs.deleted": "0",
+        "store.size": "5mb",
+        "pri.store.size": "5mb"
+    },
+    {
+        "health": "yellow",
+        "status": "open",
+        "index": "hotel_tourist_source_v2",
+        "uuid": "ruP6NgCVQwy4pU1w7iN6hQ",
+        "pri": "5",
+        "rep": "1",
+        "docs.count": "0",
+        "docs.deleted": "0",
+        "store.size": "1.2kb",
+        "pri.store.size": "1.2kb"
+    },
+    {
+        "health": "green",
+        "status": "open",
+        "index": "lib3",
+        "uuid": "TsqxOxbmQuiluUNkBBfJKw",
+        "pri": "3",
+        "rep": "0",
+        "docs.count": "0",
+        "docs.deleted": "0",
+        "store.size": "783b",
+        "pri.store.size": "783b"
+    },
+    {
+        "health": "yellow",
+        "status": "open",
+        "index": "hy_gather_weather",
+        "uuid": "Equ1mHxqSASECwQjwejJbA",
+        "pri": "5",
+        "rep": "1",
+        "docs.count": "7900",
+        "docs.deleted": "0",
+        "store.size": "1.3mb",
+        "pri.store.size": "1.3mb"
+    },
+    {
+        "health": "yellow",
+        "status": "open",
+        "index": "hotel_tourist_source_v3",
+        "uuid": "3siYp1ByRBqV_UnlkY8rhw",
+        "pri": "5",
+        "rep": "1",
+        "docs.count": "0",
+        "docs.deleted": "0",
+        "store.size": "1.2kb",
+        "pri.store.size": "1.2kb"
+    },
+    {
+        "health": "yellow",
+        "status": "open",
+        "index": "hy_mock_data_five_minute",
+        "uuid": "_BMMtJdhSvCJ6-tW3gk9HQ",
+        "pri": "5",
+        "rep": "1",
+        "docs.count": "22100",
+        "docs.deleted": "0",
+        "store.size": "3.5mb",
+        "pri.store.size": "3.5mb"
     },
     {
         "health": "yellow",
@@ -26,6 +110,42 @@
     {
         "health": "yellow",
         "status": "open",
+        "index": "hotel_tourist_source_v9",
+        "uuid": "BkUnQD7ZQ6ei-lY1lowToQ",
+        "pri": "5",
+        "rep": "1",
+        "docs.count": "28800",
+        "docs.deleted": "0",
+        "store.size": "4.8mb",
+        "pri.store.size": "4.8mb"
+    },
+    {
+        "health": "yellow",
+        "status": "open",
+        "index": "tourist_local_data",
+        "uuid": "oia8u2IpS96q9yaR_2rZOg",
+        "pri": "5",
+        "rep": "2",
+        "docs.count": "29300",
+        "docs.deleted": "0",
+        "store.size": "2.1mb",
+        "pri.store.size": "2.1mb"
+    },
+    {
+        "health": "yellow",
+        "status": "open",
+        "index": "hotel_tourist_source_v7",
+        "uuid": "SATVQVqDTUymQkWBl2bKwg",
+        "pri": "5",
+        "rep": "1",
+        "docs.count": "0",
+        "docs.deleted": "0",
+        "store.size": "1.2kb",
+        "pri.store.size": "1.2kb"
+    },
+    {
+        "health": "yellow",
+        "status": "open",
         "index": "people",
         "uuid": "Mm96TGZoSxevX6Gjm0bVXw",
         "pri": "3",
@@ -34,6 +154,30 @@
         "docs.deleted": "0",
         "store.size": "783b",
         "pri.store.size": "783b"
+    },
+    {
+        "health": "yellow",
+        "status": "open",
+        "index": "reptile_new1",
+        "uuid": "IzQCcndhRZ6yLwrF_sr52A",
+        "pri": "5",
+        "rep": "1",
+        "docs.count": "3829",
+        "docs.deleted": "0",
+        "store.size": "7.3mb",
+        "pri.store.size": "7.3mb"
+    },
+    {
+        "health": "yellow",
+        "status": "open",
+        "index": "hotel_tourist_source_v4",
+        "uuid": "PqK23iGmRpSm4VVnb_bQVA",
+        "pri": "5",
+        "rep": "1",
+        "docs.count": "0",
+        "docs.deleted": "0",
+        "store.size": "1.2kb",
+        "pri.store.size": "1.2kb"
     },
     {
         "health": "green",
@@ -50,6 +194,18 @@
     {
         "health": "yellow",
         "status": "open",
+        "index": "hotel_tourist_source_v8",
+        "uuid": "t-STe14_Sq-lPCILPTFAcA",
+        "pri": "5",
+        "rep": "1",
+        "docs.count": "0",
+        "docs.deleted": "0",
+        "store.size": "1.2kb",
+        "pri.store.size": "1.2kb"
+    },
+    {
+        "health": "yellow",
+        "status": "open",
         "index": "tourist_minute_local_data",
         "uuid": "fJ012ZFAQEiHytMAq11I8A",
         "pri": "5",
@@ -58,5 +214,17 @@
         "docs.deleted": "252",
         "store.size": "147.7kb",
         "pri.store.size": "147.7kb"
+    },
+    {
+        "health": "yellow",
+        "status": "open",
+        "index": "hotel_tourist_source_v5",
+        "uuid": "jY60S_RLQQiU2EeES0Akfw",
+        "pri": "5",
+        "rep": "1",
+        "docs.count": "0",
+        "docs.deleted": "0",
+        "store.size": "1.2kb",
+        "pri.store.size": "1.2kb"
     }
 ]

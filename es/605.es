@@ -50,3 +50,21 @@ PUT  /tourist_minute_local_data/_mapping/_doc
 }
 
 GET /_cat/indices
+
+
+
+POST  /hotel_tourist_source/_search?_source=id,provName
+{
+    "query": {
+        "match_all": {}
+    }
+}
+
+GET /hotel_tourist_source/_search
+{
+    "query": {
+        "match_all": {}
+    },
+    "_source":["id","provName"]
+    
+}
