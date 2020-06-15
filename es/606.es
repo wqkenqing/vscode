@@ -31,4 +31,19 @@ PUT /lib3
 GET /_cat/indices
 
 
+GET /hy_gather_weather/_search
 
+GET /hy_gather_weather/_search
+{
+  "query": {
+    "bool": {
+      "must": [
+        {"range": {
+          "gatherTime": {
+            "gte": "2020-02-15 10:42:00"
+          }
+        }}
+      ]
+    }
+  }
+}

@@ -1,12 +1,14 @@
 #!python3
 # coding=utf-8
 from elasticsearch import Elasticsearch
+
 import json
+
 
 class esOperate(object):
     def getEsConnect(self, host, port):
-        hosts=[]
-        hosts.append('{}:{}'.format(host,port))
+        hosts = []
+        hosts.append('{}:{}'.format(host, port))
         es = Elasticsearch(hosts)
         return es
 
@@ -20,13 +22,29 @@ class esOperate(object):
         )
         return response
 
+    def operate(self, es, index, body):
+        response = es.search
+        return response
+
+
 if __name__ == '__main__':
-    operate=esOperate()
-    es=operate.getEsConnect("jd_cloud","9200")
+    operate = esOperate()
+    es = operate.getEsConnect("jd_cloud", "9200")
+    index = 'hy_gather_weather'
+    body = '''{
+"query": {
+    "bool": {
+      "must": [
+        {"range": {
+          "gatherTime": {
+            "gte": "2020-02-15 10:42:00"
+          }
+        }}
+      ]
+    }
+  }
+}'''
 
-    # res=operate.search(es,'people',body=query)
-    # print(json.dumps(res,indent=4))
-
-
-
+    response = operate.search(es, index, body)
+    print(json.dumps(response, indent=4))
 
