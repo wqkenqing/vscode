@@ -39,11 +39,19 @@ def csv_transform(from_path, topath):
 
     logging.info("all files have sent!")
 
+def csv_getHeader(frompath):
+    csv_reader=open(from_path,"r",encoding="utf8")
+    reader=csv.reader(csv_reader)
+    for row in reader :
+        print(row)
+
+
 
 if __name__ == '__main__':
     # csv_operate(path)
     # row=[['name','age']]
     # csv_output(path,row)
     from_path = "/Users/wqkenqing/Desktop/文档/公司文稿/yanggu/hy_travel_related_enterprises_view.csv"
-    to_path = "/Users/wqkenqing/Desktop/临时文件/out.csv"
-    csv_transform(from_path, to_path)
+    # to_path = "/Users/wqkenqing/Desktop/临时文件/out.csv"
+    # csv_transform(from_path, to_path)
+    csv_getHeader(from_path)

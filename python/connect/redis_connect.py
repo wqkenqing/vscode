@@ -1,5 +1,7 @@
 #!python3
 # -*- coding: UTF-8 -*-
+from multiprocessing import pool
+
 import redis
 import time
 
