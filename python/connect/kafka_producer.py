@@ -9,4 +9,4 @@ while(True):
     count=count+1
     countb=bytes(count)
     print('send info at %d times',count)
-    producer.send('test-topic1',b'Hello kafka'+countb)
+    producer.send('test-topic2',b'Hello kafka'+countb)

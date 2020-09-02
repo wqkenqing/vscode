@@ -1,12 +1,46 @@
 #!python3
 # -*- coding: UTF-8 -*-
-from kafka import SimpleClient, KafkaConsumer
-from kafka.common import OffsetRequestPayload, TopicPartition
-
-import logging
+import configparser
 import datetime
-import schedule
+import os
+import sys
 import time
+import logging
+import schedule
+from kafka import KafkaConsumer, TopicPartition
+from kafka.client import SimpleClient
+from kafka.structs import OffsetRequestPayload
+
+logging.basicConfig(format='%(asctime)s - %(pathname)s[line:%(lineno)d] - %(levelname)s: %(message)s',
+                    level=logging.DEBUG)
+
+
+def initConfig(path):
+    """
+    加载配置文件
+    :return:
+    """
+    cf = configparser.ConfigParser()
+    # file = open(path).read().encode("utf-8")
+    cf.read(path, encoding="utf-8-sig")
+    initmap = {}
+    for item in cf.items("kafka"):
+        initmap.__setitem__(item[0], item[1])
+    return initmap
+
+
+def initConfigN(path):
+    """
+    加载配置文件
+    :return:
+    """
+    initmap = {}
+    with open(path, "r", encoding="utf8") as f:
+        for line in f.readlines():
+            line = line.replace("\n", "")
+            rows = line.split(" ")
+            initmap.__setitem__(rows[0], rows[1])
+    return initmap
 
 
 def get_topic_offset(brokers, topic):
@@ -57,12 +91,11 @@ def InitGroupOffsetInfo(path):
             info = info.replace("\n", "")
             infos = info.split(" ")
             infoMap.__setitem__(infos[0], info.replace("11", "12"))
-            # infoMap.items()
+    logging.info("初始化信息加载完成....")
     return infoMap
 
 
 def writeMapInfoIntoFile(infoMap, path):
-    imap = {}
     imap = infoMap
     """
     将最新的initInfoMap 写入file中
@@ -74,38 +107,27 @@ def writeMapInfoIntoFile(infoMap, path):
             f.write("\n")
 
     logging.info("map has wrote into  files")
+
+
 def writeIsRestartTagIntoFile(path):
-    with open(path,"w",encoding="utf8")as f:
+    with open(path, "w", encoding="utf8")as f:
         f.write("true")
 
-if __name__ == '__main__':
-    # topic_offset = get_topic_offset("tengxun2:9092", "test-topic1")
-    #
-    # group_offset = get_group_offset("tengxun2:9092", "consumer002", "test-topic1")
-    # print("the topic_number is %d",topic_offset)
-    # print("the group_number is %d",group_offset)
 
-    # tps = getTopics("tengxun2:9092")
-    # tpps = []
-    # for tp in tps:
-    #     offset = get_group_offset("tengxun2:9092", "consumer002", tp)
-    #     tpps.append(offset)
-    # print(tpps)
-    brokers = "tengxun2:9092"
-    group_id = "consumer002"
-
-    path = "/Users/wqkenqing/Desktop/temp_key/demo1.txt"
-    path1 = "/Users/wqkenqing/Desktop/temp_key/is_restartKafa"
-
+def monitor(path):
+    now = datetime.datetime.now()
+    ts = now.strftime('%Y-%m-%d %H:%M:%S')
+    logging.info('monitor time is :', ts)
+    initmap = initConfig(path)
     # 加载初始化文件
-    imap = InitGroupOffsetInfo(path)
+    imap = InitGroupOffsetInfo(initmap.get("offset_record"))
     # 获取topic 对应offset信息
     # 获取topics
-    topics = getTopics(brokers)
+    topics = getTopics(initmap.get("brokers"))
     for topic in topics:
         if (topic == "__consumer_offsets"):
             continue
-        offset = get_group_offset(brokers, group_id, topic)
+        offset = get_group_offset(initmap.get("brokers"), initmap.get("group_id"), topic)
         if not imap.get(topic):
             info = topic + " " + str(offset) + " " + "0"
             imap.__setitem__(topic, info)
@@ -116,11 +138,31 @@ if __name__ == '__main__':
             threshold = infos[2]
             if (int(old_offset) == int(offset)):
                 threshold = int(threshold) + 1
-                info = topic + " " + str(offset) +" "+ str(threshold)
+                info = topic + " " + str(offset) + " " + str(threshold)
                 imap.__setitem__(topic, info)
-                if (threshold == 4):
-                    print("重启标识")
-                    #重启标识
-                    writeIsRestartTagIntoFile(path)
+                if (threshold >= int(initmap.get("threshold"))):
+                    logging.info("kafka is going to restart!")
+                    os.system(initmap.get("command1"))
+                    os.system(initmap.get("command2"))
+                    # 重置心跳文件
+                    imap = {}
+                    writeMapInfoIntoFile(imap, initmap.get("offset_record"))
+                    # 重启Kafka需要时间
+                    time.sleep(120)
+                    logging.info("kafka restart is completed!")
     # 文件写回
-    writeMapInfoIntoFile(imap, path)
+    writeMapInfoIntoFile(imap, initmap.get("offset_record"))
+
+
+if __name__ == '__main__':
+    # path = "/Users/kuiqwang/Desktop/temp_key/kafka.conf"
+    print("kafka monitor job is running!")
+    if len(sys.argv) != 2:
+        logging.error("运行参数有误..")
+        exit(1)
+    path = sys.argv[1]
+    schedule.every(30).seconds.do(monitor, path)
+    while (True):
+        schedule.run_pending()
+        time.sleep(2)
+    # print(initConfig(path))
