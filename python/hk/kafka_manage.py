@@ -117,7 +117,7 @@ def writeIsRestartTagIntoFile(path):
 def monitor(path):
     now = datetime.datetime.now()
     ts = now.strftime('%Y-%m-%d %H:%M:%S')
-    logging.info('monitor time is :', ts)
+    logging.info('monitor time is : %s', ts)
     initmap = initConfig(path)
     # 加载初始化文件
     imap = InitGroupOffsetInfo(initmap.get("offset_record"))
@@ -143,24 +143,29 @@ def monitor(path):
                 if (threshold >= int(initmap.get("threshold"))):
                     logging.info("kafka is going to restart!")
                     os.system(initmap.get("command1"))
-                    os.system(initmap.get("command2"))
+                    # os.system(initmap.get("command2"))
+                    ts = now.strftime('%Y-%m-%d %H:%M:%S')
+                    logging.info("the time of restart is %s", ts)
                     # 重置心跳文件
                     imap = {}
                     writeMapInfoIntoFile(imap, initmap.get("offset_record"))
                     # 重启Kafka需要时间
                     time.sleep(120)
-                    logging.info("kafka restart is completed!")
+                    ts = now.strftime('%Y-%m-%d %H:%M:%S')
+                    logging.info("kafka restart is completed! %s", ts)
     # 文件写回
     writeMapInfoIntoFile(imap, initmap.get("offset_record"))
 
 
 if __name__ == '__main__':
-    # path = "/Users/kuiqwang/Desktop/temp_key/kafka.conf"
+    path = "/Users/kuiqwang/Desktop/temp_key/kafka.conf"
+    ##参数conf地址
+
     print("kafka monitor job is running!")
-    if len(sys.argv) != 2:
-        logging.error("运行参数有误..")
-        exit(1)
-    path = sys.argv[1]
+    # if len(sys.argv) != 2:
+    #     logging.error("运行参数有误..")
+    #     exit(1)
+    # path = sys.argv[1]
     schedule.every(30).seconds.do(monitor, path)
     while (True):
         schedule.run_pending()
